@@ -1,24 +1,23 @@
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 import AudioCall from './AudioCall'
+import Answer  from "./Answer";
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <AudioCall />
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit humanhhh<code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Reactjkkj
-        </a>
+      <Router>
+        <Routes>
+          <Route path="/call" element={<AudioCall />} />
+          <Route path="/answer" element={<Answer />} />
+        </Routes>
+      </Router>
       </header>
     </div>
   );
